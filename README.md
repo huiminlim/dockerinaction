@@ -78,3 +78,17 @@ Images can be deleted using the `rmi` command.
 ```bash
 docker rmi test:latest
 ```
+
+## Volumes
+
+There are 2 types of volumes in Docker: Bind mounts and Docker-managed volumes.
+
+![alt text](image.png)
+
+Bind Mount volumes are useful to share data across processes.
+
+The `-v` flag is used to create a mapping: key is the path on the host and value is **absolute path** to container location.
+
+```bash
+docker run -d --name bmweb -v ~/example-docs:/usr/local/apache2/htdocs -p 80:80 httpd:latest
+```
