@@ -16,6 +16,28 @@ Follow the instructions [here](https://www.digitalocean.com/community/tutorials/
 
 Running a container from image, detached to background.
 
+To run the programs interactive, use the `-i` flag.
+
 ```bash
-docker run --detach --name web nginx:latest
+docker run --detach --name webcontainer nginx:latest
+```
+
+To check actively running containers, run the `ps` command.
+
+```bash
+docker ps
+```
+
+Containers can be restart and verified to be restarted correctly.
+
+```bash
+docker stop webcontainer # Stops the container
+docker restart webcontainer
+docker logs webcontainer
+```
+
+To run additional programs in a docker container, use the `exec` command.
+
+```bash
+docker exec webcontainer ls # Runs the ls command inside webcontainer
 ```
