@@ -35,6 +35,7 @@ Also, to save an image only rather than spin containers up, use the `pull` comma
 
 ```bash
 docker pull nginx:latest
+docker pull quay.io/dockerinaction/ch3_hello_registry:latest # from alternate sources not from docker hub
 ```
 
 To check actively running containers, run the `ps` command.
