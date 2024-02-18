@@ -31,13 +31,6 @@ docker create --name webcontainer nginx:latest
 docker start webcontainer
 ```
 
-Also, to save an image only rather than spin containers up, use the `pull` command.
-
-```bash
-docker pull nginx:latest
-docker pull quay.io/dockerinaction/ch3_hello_registry:latest # from alternate sources not from docker hub
-```
-
 To check actively running containers, run the `ps` command.
 
 ```bash
@@ -56,4 +49,32 @@ To run additional programs in a docker container, use the `exec` command.
 
 ```bash
 docker exec webcontainer ls # Runs the ls command inside webcontainer
+```
+
+## Images
+
+To pull an image only rather than spin containers up, use the `pull` command.
+
+```bash
+docker pull nginx:latest
+docker pull quay.io/dockerinaction/ch3_hello_registry:latest # from alternate sources not from docker hub
+```
+
+To save the image as a tar file, use the `save` command. Then, load it using the `load` command.
+
+```bash
+docker save -o nginx.tar nginx:latest
+docker load –i nginx.tar
+```
+
+A docker image can also be built using a dockerfile.
+
+```bash
+docker build -t test:latest ch3_dockerfile # ch3_dockerfile is a directory containing the Dockerfile
+```
+
+Images can be deleted using the `rmi` command.
+
+```bash
+docker rmi test:latest
 ```
