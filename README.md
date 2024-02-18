@@ -14,12 +14,19 @@ Follow the instructions [here](https://www.digitalocean.com/community/tutorials/
 
 ## Common Commands
 
-Running a container from image, detached to background.
+Running a container from image, detached to background. The container will be running automatically.
 
 To run the programs interactive, use the `-i` flag.
 
 ```bash
 docker run --detach --name webcontainer nginx:latest
+```
+
+However, to create a container from an image but in stopped state, use the `create` command.
+
+```bash
+docker create --name webcontainer nginx:latest
+docker start webcontainer
 ```
 
 To check actively running containers, run the `ps` command.
