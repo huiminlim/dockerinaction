@@ -16,7 +16,9 @@ Follow the instructions [here](https://www.digitalocean.com/community/tutorials/
 
 Running a container from image, detached to background. The container will be running automatically.
 
-To run the programs interactive, use the `-i` flag.
+To run the programs interactive, use the `-it` flag.
+
+To delete container after finishing run, use the `--rm` flag.
 
 ```bash
 docker run --detach --name webcontainer nginx:latest
@@ -27,6 +29,12 @@ However, to create a container from an image but in stopped state, use the `crea
 ```bash
 docker create --name webcontainer nginx:latest
 docker start webcontainer
+```
+
+Also, to save an image only rather than spin containers up, use the `pull` command.
+
+```bash
+docker pull nginx:latest
 ```
 
 To check actively running containers, run the `ps` command.
